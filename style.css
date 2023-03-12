@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    overflow:hidden;
+
+}
+
+.carte{
+    width:20%; 
+
+    height:60%;
+    border:2px solid black;
+    margin:0 2px;
+    position:relative;
+    cursor:pointer;
+  
+
+}
+
+.panthere{
+    background:url(img/panthere.jpg);
+    background-size: cover;
+    background-position:top;
+    top:10%;
+   
+    
+}
+
+h2,p{
+    color:white;
+}
+
+.jaguar{
+    background:url(img/jaguar.jpg);
+    background-position:top;
+    background-size:cover;
+    top:20%;
+}
+
+
+.guepard{
+    background:url(img/guepard.jpg);
+    background-size:cover;
+    background-position:top;
+    top:15%
+}
+
+.leopard{
+    background:url(img/leopard.jpg);
+    background-size: cover;
+    top:25%;
+}
+
+.croix{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:70px;
+    height:70px;
+    border:2px solid white;
+    border-radius:50%;
+    position:relative;
+    transition:all 0.8s;
+}
+
+.croix:before,
+.croix:after{
+    content:"";
+    position:absolute;
+    background-color:white;
+    transition:all 0.8s;
+}
+
+.croix:before{
+    width:15px;
+    height:5px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius:10px;
+}
+
+.carte:hover .croix{
+    top:70px;
+    background-color:white;
+}
+
+.carte:hover .croix:before,.carte:hover .croix:after{
+    background-color:black;
+}
+
+.croix:after{
+    width:5px;
+    height:15px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius:10px;
+}
+
+h2{
+    position:absolute;
+  
+    margin-bottom:2%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    bottom:0;
+    font-size:calc(16px + 2vw);
+    white-space: nowrap;
+    transition:all 0.8s;
+
+    
+
+}
+
+p{
+    position:absolute;
+    bottom:-50%;
+    left:50%;
+  
+    transform:translate(-50%,-50%);
+    font-size:1px;
+    /* font-size:calc(12px + 1vw); */
+    width:90%;
+    line-height:1.5em;
+    max-height:4.5em;
+    visibility:hidden;
+    transition:all 0.5s;
+    overflow:hidden;
+  
+    /* text-overflow:ellipsis; */
+   
+}
+
+.carte:hover p{
+    bottom:-30px;
+    font-size:calc(12px + 1vw);
+    visibility:visible;
+    overflow:clip;
+    /* text-overflow:ellipsis;  */
+    width:90%;
+    word-wrap: break-word;
+   
+
+}
+
+.carte:hover h2{
+    bottom:150px;
+    margin-bottom:0%;
+}
+
+@media screen and (max-width:900px){
+    .guepard{
+        display:none;
+    }
+
+    .leopard{
+        display:none;
+    }
+
+    .carte{
+        width:40%;
+    }
+}
+
